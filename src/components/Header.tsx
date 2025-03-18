@@ -1,14 +1,37 @@
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const Header = () => {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const handleScroll = () => {
+    if (window.scrollY > lastScrollY) {
+      setIsVisible(false); // Hide header when scrolling down
+    } else {
+      setIsVisible(true); // Show header when scrolling up
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   const navigateToGames = () => {
     navigate('/login');
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-10 py-4 flex justify-between items-center bg-transparent">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-10 py-4 flex justify-between items-center bg-transparent backdrop-blur-md transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <div className="text-white text-xl md:text-2xl font-bold">Logo</div>
       <nav className="flex items-center gap-4 md:gap-8">
         <a href="/" className="text-white hover:text-pink-500 transition-colors text-sm md:text-base">Home</a>
