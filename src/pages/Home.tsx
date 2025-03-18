@@ -9,10 +9,10 @@ import SeeAllGamesButton from '../components/SeeAllGamesButton';
 const Home = () => {
   // Array of image paths (replace with your actual image paths)
   const images = [
-    '/src/assets/game-coin.png',
-    '/src/assets/img4.png',
-    '/src/assets/img3.png',
-    '/src/assets/img4.png',
+    '/assets/game-coin.png', // Corrected path
+    '/assets/img4.png',      // Corrected path
+    '/assets/img3.png',      // Corrected path
+    '/assets/img4.png',      // Corrected path
   ];
 
   return (
