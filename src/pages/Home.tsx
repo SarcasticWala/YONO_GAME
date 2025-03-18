@@ -6,14 +6,20 @@ import GameCard from '../components/GameCard';
 import ScrollDown from '../components/ScrollDown';
 import SeeAllGamesButton from '../components/SeeAllGamesButton';
 
+
+import gameCoin from '../assets/game-coin.png';
+import game160248 from '../assets/Untitled-1 1.png';
+import img4 from '../assets/img4.png';
+import img3 from '../assets/img3.png';
+import jackpot from '../assets/jackpot.png';
 const Home = () => {
   // Array of game data
   const games = [
-    { id: 1, image: '/src/assets/game-coin.png', name: 'Game Coin' },
-    { id: 2, image: '/src/assets/Untitled-1 1.png', name: 'Game 160248' },
-    { id: 3, image: '/src/assets/img4.png', name: 'Game Image 4' },
-    { id: 4, image: '/src/assets/img3.png', name: 'Game Image 3' },
-    { id: 5, image: '/src/assets/jackpot.png', name: 'Jackpot' },
+    { id: 1, image: gameCoin, name: 'Game Coin' },
+    { id: 2, image: game160248, name: 'Game 160248' },
+    { id: 3, image: img4, name: 'Game Image 4' },
+    { id: 4, image: img3, name: 'Game Image 3' },
+    { id: 5, image: jackpot, name: 'Jackpot' },
   ];
 
   return (
